@@ -2,7 +2,7 @@
 title: Neovim Plugins
 ---
 
-[[neovim|Neovim]] also supports plugins. It is easier to use plugins with a package manager than it is to do manually. Lazy.nvim is a popular package manager.
+[[Neovim]] also supports plugins. It is easier to use plugins with a package manager than it is to do manually. Lazy.nvim is a popular package manager.
 
 As shown on [this website](https://vonheikemen.github.io/devlog/tools/build-your-first-lua-config-for-neovim/), the following code snippet should be put into `init.lua` under the options above.
 

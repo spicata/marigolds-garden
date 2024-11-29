@@ -7,7 +7,7 @@ permalink: /
 
 # Welcome. 🌞
 
-(a website full of atom-sized evergreens!)
+(a website full of atom-sized [[evergreen-key|evergreens]]!)
 
-- [[Untitled]]
-- [[Neovim]]
+[[Untitled]]
+[[Neovim]]
