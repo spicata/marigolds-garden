@@ -25,7 +25,7 @@
   
 
   
-  <meta property="article:published_time" content="2024-11-29T11:44:43+08:00">
+  <meta property="article:published_time" content="2024-11-29T11:47:34+08:00">
   <meta property="article:author" content="/">
   
 
@@ -49,7 +49,7 @@
       <main><article>
   <div>
     <h1>Neovim</h1>
-    <time datetime="2024-11-29T11:39:32+08:00">
+    <time datetime="2024-11-29T11:44:43+08:00">
       Last updated on November 29, 2024
       
     </time>
@@ -68,60 +68,6 @@
 <span class="n">vim</span><span class="p">.</span><span class="n">opt</span><span class="p">.</span><span class="n">tabstop</span> <span class="o">=</span> <span class="mi">2</span>             <span class="c1">-- This changes the number of spaces a tab is worth</span>
 <span class="n">vim</span><span class="p">.</span><span class="n">opt</span><span class="p">.</span><span class="n">shiftwidth</span> <span class="o">=</span> <span class="mi">2</span>          <span class="c1">-- This should be the same as tabstop</span>
 <span class="n">vim</span><span class="p">.</span><span class="n">opt</span><span class="p">.</span><span class="n">wrap</span> <span class="o">=</span> <span class="kc">false</span>            <span class="c1">-- This turns off wrapping long lines</span>
-</code></pre></div></div>
-
-<p>Neovim also supports plugins. It is easier to use plugins with a package manager than it is to do manually. Lazy.nvim is a popular package manager.</p>
-
-<p>As shown on <a href="https://vonheikemen.github.io/devlog/tools/build-your-first-lua-config-for-neovim/" target="_blank">this website</a>, the following code snippet should be put into <code class="language-plaintext highlighter-rouge">init.lua</code> under the options above.</p>
-
-<div class="language-lua highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">local</span> <span class="n">lazy</span> <span class="o">=</span> <span class="p">{}</span>
-
-<span class="k">function</span> <span class="nc">lazy</span><span class="p">.</span><span class="nf">install</span><span class="p">(</span><span class="n">path</span><span class="p">)</span>
-  <span class="k">if</span> <span class="ow">not</span> <span class="n">vim</span><span class="p">.</span><span class="n">loop</span><span class="p">.</span><span class="n">fs_stat</span><span class="p">(</span><span class="n">path</span><span class="p">)</span> <span class="k">then</span>
-    <span class="nb">print</span><span class="p">(</span><span class="s1">'Installing lazy.nvim....'</span><span class="p">)</span>
-    <span class="n">vim</span><span class="p">.</span><span class="n">fn</span><span class="p">.</span><span class="n">system</span><span class="p">({</span>
-      <span class="s1">'git'</span><span class="p">,</span>
-      <span class="s1">'clone'</span><span class="p">,</span>
-      <span class="s1">'--filter=blob:none'</span><span class="p">,</span>
-      <span class="s1">'https://github.com/folke/lazy.nvim.git'</span><span class="p">,</span>
-      <span class="s1">'--branch=stable'</span><span class="p">,</span> <span class="c1">-- latest stable release</span>
-      <span class="n">path</span><span class="p">,</span>
-    <span class="p">})</span>
-  <span class="k">end</span>
-<span class="k">end</span>
-
-<span class="k">function</span> <span class="nc">lazy</span><span class="p">.</span><span class="nf">setup</span><span class="p">(</span><span class="n">plugins</span><span class="p">)</span>
-  <span class="k">if</span> <span class="n">vim</span><span class="p">.</span><span class="n">g</span><span class="p">.</span><span class="n">plugins_ready</span> <span class="k">then</span>
-    <span class="k">return</span>
-  <span class="k">end</span>
-
-  <span class="c1">-- You can "comment out" the line below after lazy.nvim is installed</span>
-  <span class="n">lazy</span><span class="p">.</span><span class="n">install</span><span class="p">(</span><span class="n">lazy</span><span class="p">.</span><span class="n">path</span><span class="p">)</span>
-
-  <span class="n">vim</span><span class="p">.</span><span class="n">opt</span><span class="p">.</span><span class="n">rtp</span><span class="p">:</span><span class="n">prepend</span><span class="p">(</span><span class="n">lazy</span><span class="p">.</span><span class="n">path</span><span class="p">)</span>
-
-  <span class="nb">require</span><span class="p">(</span><span class="s1">'lazy'</span><span class="p">).</span><span class="n">setup</span><span class="p">(</span><span class="n">plugins</span><span class="p">,</span> <span class="n">lazy</span><span class="p">.</span><span class="n">opts</span><span class="p">)</span>
-  <span class="n">vim</span><span class="p">.</span><span class="n">g</span><span class="p">.</span><span class="n">plugins_ready</span> <span class="o">=</span> <span class="kc">true</span>
-<span class="k">end</span>
-</code></pre></div></div>
-
-<p>To import plugins, write:</p>
-
-<div class="language-lua highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">lazy</span><span class="p">.</span><span class="n">setup</span><span class="p">({</span>
-  <span class="p">{</span><span class="s1">'plugin-1'</span><span class="p">},</span>
-  <span class="p">{</span><span class="s1">'plugin-2'</span><span class="p">},</span>
-<span class="p">})</span>
-</code></pre></div></div>
-
-<p>For example:</p>
-
-<div class="language-lua highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">lazy</span><span class="p">.</span><span class="n">setup</span><span class="p">({</span>
-  <span class="p">{</span><span class="s1">'nvim-lualine/lualine.nvim'</span><span class="p">,</span> <span class="n">dependencies</span> <span class="o">=</span> <span class="p">{</span> <span class="s1">'nvim-tree/nvim-web-devicons'</span> <span class="p">}},</span>
-  <span class="p">{</span><span class="s1">'windwp/nvim-autopairs'</span><span class="p">,</span> <span class="n">event</span> <span class="o">=</span> <span class="s2">"InsertEnter"</span><span class="p">,</span> <span class="n">opts</span> <span class="o">=</span> <span class="p">{}},</span>
-<span class="p">})</span>
-
-<span class="nb">require</span><span class="p">(</span><span class="s1">'lualine'</span><span class="p">).</span><span class="n">setup</span><span class="p">()</span> <span class="c1">-- some plugins will require stuff like this afterwards.</span>
-                           <span class="c1">-- Check the plugin's help page/github for info   </span>
 </code></pre></div></div>
 
     </content>
