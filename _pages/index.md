@@ -10,3 +10,4 @@ permalink: /
 (a website full of atom-sized evergreens!)
 
 [[Untitled]]
+[[Neovim]]
