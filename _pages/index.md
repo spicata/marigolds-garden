@@ -9,5 +9,6 @@ permalink: /
 
 (a website full of atom-sized [[evergreen-key|evergreens]]!)
 
-[[Untitled]]
-[[Neovim]]
+- [[Untitled]]
+- [[Neovim]]
+- [[X11]]
