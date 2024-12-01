@@ -12,3 +12,4 @@ permalink: /
 - [[Untitled]]
 - [[Neovim]]
 - [[X11]]
+- [[Bus]]

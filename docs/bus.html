@@ -3,11 +3,11 @@
   <head>
   <meta charset="UTF-8">
 
-  <link rel="canonical" href="/untitled" />
+  <link rel="canonical" href="/bus" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <meta name="description" content="hi.">
+  <meta name="description" content="#saplings">
 
   <meta property="og:site_name" content="🏵️ Goldray Garden">
 
@@ -16,11 +16,11 @@
   <link rel="stylesheet" href="/styles.css">
 
   
-  <meta property="og:description" content="hi."/>
+  <meta property="og:description" content="#saplings"/>
   
 
   
-  <meta property="og:title" content="Untitled">
+  <meta property="og:title" content="Computer Buses">
   <meta property="og:type" content="article">
   
 
@@ -29,13 +29,13 @@
   <meta property="article:author" content="/">
   
 
-  <meta property="og:url" content="/untitled" />
+  <meta property="og:url" content="/bus" />
 
   
 
   <title>
     
-      Untitled &mdash; 🏵️ Goldray Garden
+      Computer Buses &mdash; 🏵️ Goldray Garden
     
   </title>
 </head>
@@ -48,19 +48,48 @@
     <div class="wrapper">
       <main><article>
   <div>
-    <h1>Untitled</h1>
-    <time datetime="2024-11-29T11:44:43+08:00">
-      Last updated on November 29, 2024
+    <h1>Computer Buses</h1>
+    <time datetime="2024-12-01T23:05:17+08:00">
+      Last updated on December 1, 2024
       
     </time>
   </div>
 
   <div id="notes-entry-container">
     <content>
-      <p>hi.</p>
+      <p>#saplings</p>
 
-<div class="language-c highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">for</span> <span class="p">(</span><span class="n">n</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">m</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">;</span> <span class="n">n</span><span class="o">++</span><span class="p">,</span> <span class="n">m</span> <span class="o">/=</span> <span class="mi">2</span><span class="p">);</span>
-</code></pre></div></div>
+<ul>
+  <li>A bus is a communications system</li>
+  <li>Buses are a set of physical connections such as cable and circuits that can be shared by multiple hardware components.
+    <ul>
+      <li>Memory and IO devices are connected to the CPU through buses</li>
+      <li>A bus contains multiple wires. Each wire carries one or more bits. More wires means more memory that a bus can carry.</li>
+    </ul>
+  </li>
+  <li>3 types: address, data, control</li>
+  <li>Address bus is unidirectional (CPU -&gt; device) and it is used to identify particular locations in memory
+    <ul>
+      <li>Transports address that computer wants to read or write</li>
+      <li>Size of address bus determines how many unique locations can be addressed
+        <ul>
+          <li>e.g. 4-bit address bus = 2^4 bits of memory</li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+  <li>Data buses are bidirectional and they transfer data</li>
+  <li>Control buses are bidirectional and they carry control data, such as orders, sync data, or response signals</li>
+  <li>Buses operate at certain frequencies e.g. 200 MHz. This is the bus width</li>
+  <li>Buses are either parallel/serial or internal(local)/external(expansion)
+    <ul>
+      <li>Internal buses allow communication between internal components, such as memory. External buses allow communication with peripherals, like with USBs.</li>
+      <li>Parallel buses can transmit several bits at a time. Serial buses can only transmit one.</li>
+    </ul>
+  </li>
+  <li>Address bus contains the memory address. Data bus contains the data. Control bus sends commands.</li>
+  <li>Common buses: eSATA/SATA (disks), USB (peripherals), Thunderbolt (USB-C peripherals), PCIe</li>
+</ul>
 
     </content>
 
