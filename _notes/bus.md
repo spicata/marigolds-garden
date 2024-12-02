@@ -21,3 +21,4 @@ title: Computer Buses
 	- Parallel buses can transmit several bits at a time. Serial buses can only transmit one.
 - Address bus contains the memory address. Data bus contains the data. Control bus sends commands.
 - Common buses: eSATA/SATA (disks), USB (peripherals), Thunderbolt (USB-C peripherals), PCIe
+- USB is a Universal Serial Bus
